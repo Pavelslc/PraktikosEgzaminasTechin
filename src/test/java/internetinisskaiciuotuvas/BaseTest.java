@@ -13,6 +13,9 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.get("http://localhost:8080/prisijungti");
         driver.manage().window().maximize();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.waitForToLoadPrisijungimas();
+
     }
     @AfterEach
     void driverQuit(){
