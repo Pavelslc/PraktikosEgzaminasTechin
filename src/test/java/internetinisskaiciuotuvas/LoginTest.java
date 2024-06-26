@@ -23,12 +23,11 @@ public class LoginTest extends BaseTest{
         // create user
         String username = RandomNameGenerator.generateRandomName();
         String password = "password123.";
-        String passwordConfirm = password;
         loginPage.clickLinkRegister();
         registerPage
                 .sendInputUsername(username)
                 .sendInputPassword(password)
-                .sendInputPasswordConfirm(passwordConfirm)
+                .sendInputPasswordConfirm(password)
                 .clickButtonSubmit();
         skaiciuotuvasPage.waitForPageToLoadSkaiciuotuvas();
         skaiciuotuvasPage.clickLinkLogOut();
