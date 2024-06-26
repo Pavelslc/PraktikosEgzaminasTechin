@@ -14,6 +14,9 @@ public class RegisterPage extends BasePage{
     private WebElement inputPasswordConfirm;
     @FindBy (css = "[type='submit']")
     private WebElement buttonSubmit;
+    @FindBy (css = ".form-group.has-error")
+    private WebElement errorRegister;
+
 
 
     public RegisterPage(WebDriver driver) {
@@ -38,6 +41,8 @@ public class RegisterPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(buttonSubmit));
         actions.click(buttonSubmit).perform();
     }
-
+    public boolean isDisplayedErrorRegister() {
+        return errorRegister.isDisplayed();
+    }
 
 }
