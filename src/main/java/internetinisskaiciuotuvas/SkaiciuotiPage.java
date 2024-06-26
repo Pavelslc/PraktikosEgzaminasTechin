@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SkaiciuotiPage extends SkaiciuotuvasPage{
+public class SkaiciuotiPage extends SkaiciuotuvasPage {
 
     public SkaiciuotiPage(WebDriver driver) {
         super(driver);

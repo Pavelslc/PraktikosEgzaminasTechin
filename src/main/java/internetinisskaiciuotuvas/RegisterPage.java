@@ -5,42 +5,46 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class RegisterPage extends BasePage{
-    @FindBy (css = "#username")
+public class RegisterPage extends BasePage {
+    @FindBy(css = "#username")
     private WebElement inputUsername;
-    @FindBy (css = "#password")
+    @FindBy(css = "#password")
     private WebElement inputPassword;
-    @FindBy (css = "#passwordConfirm")
+    @FindBy(css = "#passwordConfirm")
     private WebElement inputPasswordConfirm;
-    @FindBy (css = "[type='submit']")
+    @FindBy(css = "[type='submit']")
     private WebElement buttonSubmit;
-    @FindBy (css = ".form-group.has-error")
+    @FindBy(css = ".form-group.has-error")
     private WebElement errorRegister;
-
 
 
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
+
     public RegisterPage sendInputUsername(String username) {
         wait.until(ExpectedConditions.visibilityOf(inputUsername));
         actions.click(inputUsername).sendKeys(username).perform();
         return this;
     }
-    public RegisterPage sendInputPassword (String password) {
+
+    public RegisterPage sendInputPassword(String password) {
         wait.until(ExpectedConditions.visibilityOf(inputPassword));
         actions.click(inputPassword).sendKeys(password).perform();
         return this;
     }
-    public RegisterPage sendInputPasswordConfirm (String password) {
+
+    public RegisterPage sendInputPasswordConfirm(String password) {
         wait.until(ExpectedConditions.visibilityOf(inputPasswordConfirm));
         actions.click(inputPasswordConfirm).sendKeys(password).perform();
         return this;
     }
-    public void clickButtonSubmit () {
+
+    public void clickButtonSubmit() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonSubmit));
         actions.click(buttonSubmit).perform();
     }
+
     public boolean isDisplayedErrorRegister() {
         return errorRegister.isDisplayed();
     }

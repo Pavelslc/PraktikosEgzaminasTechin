@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
     private LoginPage loginPage;
     private SkaiciuotuvasPage skaiciuotuvasPage;
     private RegisterPage registerPage;
@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    void loginTest (){
+    void loginTest() {
         // create user
         String username = RandomNameGenerator.generateRandomName();
         String password = "password123.";
@@ -45,15 +45,16 @@ public class LoginTest extends BaseTest{
         // logout
         skaiciuotuvasPage.clickLinkLogOut();
     }
+
     @Test
-    void loginNegativeTest (){
+    void loginNegativeTest() {
         String username = "a";
         String password = "";
         loginPage
                 .sendInputUsername(username)
                 .sendInputPassword(password)
                 .clickButtonSubmit();
-        assertTrue(loginPage.IsDisplayedErrorLogin(),"Login error is not displayed");
+        assertTrue(loginPage.IsDisplayedErrorLogin(), "Login error is not displayed");
     }
 
 }

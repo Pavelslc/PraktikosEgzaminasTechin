@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class NaujasIrasasTest extends BaseTest{
+public class NaujasIrasasTest extends BaseTest {
     private LoginPage loginPage;
     private SkaiciuotuvasPage skaiciuotuvasPage;
     private SkaiciuotiPage skaiciuotiPage;
     private AtliktosOperacijosPage atliktosOperacijosPage;
+
     @BeforeEach
     void loginTestSetup() {
         loginPage = new LoginPage(driver);
@@ -18,8 +19,9 @@ public class NaujasIrasasTest extends BaseTest{
         skaiciuotiPage = new SkaiciuotiPage(driver);
         atliktosOperacijosPage = new AtliktosOperacijosPage(driver);
     }
+
     @Test
-    void naujasIrasasTest (){
+    void naujasIrasasTest() {
         // login
         String username = "User001";
         String password = "password123.";
@@ -45,8 +47,9 @@ public class NaujasIrasasTest extends BaseTest{
         assertEquals(expectedResult, actualResult, "skaičiavimo rezultatai nesutampa");
         skaiciuotuvasPage.clickLinkLogOut();
     }
+
     @Test
-    void naujasIrasasNegativeTest (){
+    void naujasIrasasNegativeTest() {
         // login
         String username = "User001";
         String password = "password123.";
@@ -65,7 +68,7 @@ public class NaujasIrasasTest extends BaseTest{
                 .sendInputAntrasSkaicius(antrasSkaicius)
                 .selectOptionOperaciojosZenklas(operacijosZenklas)
                 .clickButtonSubmit();
-        assertTrue(skaiciuotiPage.isDisplayedErrorFailedToCalculate(),"Error is not displayed");
+        assertTrue(skaiciuotiPage.isDisplayedErrorFailedToCalculate(), "Error is not displayed");
         skaiciuotuvasPage.clickLinkLogOut();
     }
 }

@@ -9,7 +9,7 @@ public class BaseTest {
     protected WebDriver driver;
 
     @BeforeEach
-    void  setup(){
+    void setup() {
         driver = new ChromeDriver();
         driver.get("http://localhost:8080/prisijungti");
         driver.manage().window().maximize();
@@ -17,8 +17,9 @@ public class BaseTest {
         loginPage.waitForToLoadPrisijungimas();
 
     }
+
     @AfterEach
-    void driverQuit(){
+    void driverQuit() {
         driver.quit();
     }
 

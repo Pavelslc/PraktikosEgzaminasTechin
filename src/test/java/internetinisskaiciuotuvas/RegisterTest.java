@@ -23,12 +23,11 @@ public class RegisterTest extends BaseTest {
     void registerTest (){
         String username = RandomNameGenerator.generateRandomName();
         String password = "password123.";
-        String passwordConfirm = password;
         loginPage.clickLinkRegister();
         registerPage
                 .sendInputUsername(username)
                 .sendInputPassword(password)
-                .sendInputPasswordConfirm(passwordConfirm)
+                .sendInputPasswordConfirm(password)
                 .clickButtonSubmit();
         skaiciuotuvasPage.waitForPageToLoadSkaiciuotuvas();
         assertEquals("Skaičiuotuvas", driver.getTitle(), "page title does not match");
@@ -38,12 +37,11 @@ public class RegisterTest extends BaseTest {
     void registerNegativeTest (){
         String username = "a";
         String password = "a";
-        String passwordConfirm = password;
         loginPage.clickLinkRegister();
         registerPage
                 .sendInputUsername(username)
                 .sendInputPassword(password)
-                .sendInputPasswordConfirm(passwordConfirm)
+                .sendInputPasswordConfirm(password)
                 .clickButtonSubmit();
         assertTrue(loginPage.IsDisplayedErrorLogin(),"Register error is not displayed");
 
