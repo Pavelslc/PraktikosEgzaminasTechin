@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage{
-    @FindBy (css = "#username")
+    @FindBy (css = "[name=\"username\"]")
     private WebElement inputUsername;
-    @FindBy (css = "#password")
+    @FindBy (css = "[name=\"password\"]")
     private WebElement inputPassword;
     @FindBy (css = "[type='submit']")
     private WebElement buttonSubmit;
