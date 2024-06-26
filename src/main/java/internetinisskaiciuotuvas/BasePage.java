@@ -1,4 +1,4 @@
-package internetinisskaiciuotuvas.page;
+package internetinisskaiciuotuvas;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;

@@ -1,4 +1,4 @@
-package internetinisskaiciuotuvas.test;
+package internetinisskaiciuotuvas;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
